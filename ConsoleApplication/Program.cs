@@ -10,6 +10,7 @@ namespace ConsoleApplication
     {
         static void Main(string[] args)
         {
+            int[] myArray=new int[10];
         }
     }
 }
