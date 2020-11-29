@@ -10,7 +10,19 @@ namespace ConsoleApplication
     {
         static void Main(string[] args)
         {
-            int[] myArray=new int[10];
+            Console.Write("Введите количество элементов: ");
+            int count=int.Parse(Console.ReadLine());
+            int[] myArray=new int[count];
+            Random random=new Random();
+            for (int i = 0; i < myArray.Length; i++)
+			{
+                myArray[i]=random.Next(100);
+			}
+            for (int j = 0; j < myArray.Length; j++)
+			{
+                Console.Write(myArray[j]+"\t");
+			}
+            Console.ReadKey();
         }
     }
 }
