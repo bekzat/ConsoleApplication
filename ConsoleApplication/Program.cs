@@ -37,6 +37,18 @@ namespace ConsoleApplication
 			}
             return max;
         }
+        static int minArray(int[] newArray)
+        {
+            int min=0;
+            for (int i = 0; i < newArray.Length; i++)
+			{
+                if(newArray[i]<min)
+                {
+                    min=newArray[i];
+                }
+                return min;
+			}
+        }
         static void Main(string[] args)
         {
 
@@ -48,6 +60,8 @@ namespace ConsoleApplication
             outputAnArray(myArray);
             
             Console.WriteLine("\nМаксимум массива = "+maxArray(myArray));
+
+            Console.WriteLine("\nМинимум массива = "+minArray(myArray));
 
             Console.ReadKey();
 
