@@ -79,7 +79,7 @@ namespace ConsoleApplication
         static void Main(string[] args)
         {
 
-            Console.Write("Введите количество элементов: ");
+            Console.Write("Введите количество элементов массива: ");
             int newAmount=int.Parse(Console.ReadLine());
             int[] myArray=createNewArray(newAmount);
             printArray(myArray);
