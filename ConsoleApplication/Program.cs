@@ -43,6 +43,14 @@ namespace ConsoleApplication
 			}
             return newArray;
         }
+        static void printArrayReverse(int[] newArray)
+        {
+            for (int i = newArray.Length-1; i >=0; i--)
+			{
+                Console.Write(newArray[i]+"\t");
+			}
+            Console.WriteLine();
+        }
         static int maxArray(int[] newArray)
         {
             int max=newArray[0];
@@ -76,18 +84,19 @@ namespace ConsoleApplication
 			}
             return sum;
         }
-
-        static void Main(string[] args)
+        static void firstProject()
         {
-
             Console.Write("Введите количество элементов массива: ");
             int newAmount=int.Parse(Console.ReadLine());
 
             Console.WriteLine("Вывод массива");
             int[] myArray=createNewArray(newAmount);
             printArray(myArray);
+
+            Console.WriteLine("Вывод массива в обратном порядке");
+            printArrayReverse(myArray);
             
-            Console.WriteLine("Вывод массива по возрастанию");
+            Console.WriteLine("Элементы массива по возрастанию");
             arrayGrowth (myArray);
             printArray(myArray);
 
@@ -96,6 +105,13 @@ namespace ConsoleApplication
             Console.WriteLine("\nМинимум массива = "+minArray(myArray));
 
             Console.WriteLine("\nСумма массива = "+sumArray(myArray));
+        }
+        //------------------------------------------------------------------------------
+
+        static void Main(string[] args)
+        {
+
+            firstProject();
 
             Console.ReadKey();
 
