@@ -18,12 +18,24 @@ namespace ConsoleApplication
 			}
             return newArray;
         }
-        static void outputAnArray(int[] outputNewArray)
+        static void outputAnArray(int[] newArray)
         {
-            for (int i = 0; i < outputNewArray.Length; i++)
+            for (int i = 0; i < newArray.Length; i++)
 			{
-                Console.Write(outputNewArray[i]+"\t");
+                Console.Write(newArray[i]+"\t");
 			}
+        }
+        static int maxArray(int[] newArray)
+        {
+            int max=newArray[0];
+            for (int i = 0; i < newArray.Length; i++)
+			{
+                if(newArray[i]>max)
+                {
+                    max=newArray[i];
+                }
+			}
+            return max;
         }
         static void Main(string[] args)
         {
@@ -34,6 +46,8 @@ namespace ConsoleApplication
             int[] myArray=createNewArray(newAmount);
 
             outputAnArray(myArray);
+            
+            Console.WriteLine("\nМаксимум массива = "+maxArray(myArray));
 
             Console.ReadKey();
 
