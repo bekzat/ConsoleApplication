@@ -8,21 +8,35 @@ namespace ConsoleApplication
 {
     class Program
     {
+        static int[] createNewArray(int amount)
+        {
+            Random random = new Random();
+            int[] newArray=new int[amount];
+            for (int i = 0; i < newArray.Length; i++)
+			{
+                newArray[i]=random.Next(100);
+			}
+            return newArray;
+        }
+        static void outputAnArray(int[] outputNewArray)
+        {
+            for (int i = 0; i < outputNewArray.Length; i++)
+			{
+                Console.Write(outputNewArray[i]+"\t");
+			}
+        }
         static void Main(string[] args)
         {
+
             Console.Write("Введите количество элементов: ");
-            int count=int.Parse(Console.ReadLine());
-            int[] myArray=new int[count];
-            Random random=new Random();
-            for (int i = 0; i < myArray.Length; i++)
-			{
-                myArray[i]=random.Next(100);
-			}
-            for (int j = 0; j < myArray.Length; j++)
-			{
-                Console.Write(myArray[j]+"\t");
-			}
+            int newAmount=int.Parse(Console.ReadLine());
+
+            int[] myArray=createNewArray(newAmount);
+
+            outputAnArray(myArray);
+
             Console.ReadKey();
+
         }
     }
 }
