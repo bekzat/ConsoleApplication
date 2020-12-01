@@ -24,6 +24,7 @@ namespace ConsoleApplication
 			{
                 Console.Write(newArray[i]+"\t");
 			}
+            Console.WriteLine();
         }
         static int[] arrayReverse(int[] newArray)
         {
