@@ -107,11 +107,69 @@ namespace ConsoleApplication
             Console.WriteLine("\nСумма массива = "+sumArray(myArray));
         }
         //------------------------------------------------------------------------------
-
+        static void triangle()
+        {
+            Console.Write("Введите длину катетов треугольника: ");
+            int leg=int.Parse(Console.ReadLine());
+            Console.Write("Введите символ треугольника: ");
+            string symbol=Console.ReadLine();
+            Console.WriteLine();
+            for (int i = 0; i < leg; i++)
+			{
+                for (int j = 0; j < leg; j++)
+			    {
+                    if(j<=i)
+                    {
+                        Console.Write(symbol);
+                    }
+			    }
+                Console.WriteLine();
+			}
+            for (int k = 1; k < leg; k++)
+			{
+                for (int h = leg-k; h > 0; h--)
+			    {
+                    Console.Write(symbol);
+			    }
+                Console.WriteLine();
+			}
+            for (int f = 0; f < leg; f++)
+			{
+                for (int g = leg; g > 0; g--)
+			    {
+                    if(g<=f)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+			    }
+                Console.WriteLine();
+			}
+            for (int d = 0; d < leg; d++)
+			{
+                for (int x = leg; x > 0; x--)
+			    {
+                    if(x>leg-d)
+                    {
+                        Console.Write(" ");
+                    }
+                    else
+                    {
+                        Console.Write(symbol);
+                    }
+			    }
+                Console.WriteLine();
+			}
+        }
+        //------------------------------------------------------------------------------
         static void Main(string[] args)
         {
 
             firstProject();
+            triangle();
 
             Console.ReadKey();
 
