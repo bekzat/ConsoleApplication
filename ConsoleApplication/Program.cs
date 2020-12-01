@@ -18,12 +18,29 @@ namespace ConsoleApplication
 			}
             return newArray;
         }
-        static void outputAnArray(int[] newArray)
+        static void printArray(int[] newArray)
         {
             for (int i = 0; i < newArray.Length; i++)
 			{
                 Console.Write(newArray[i]+"\t");
 			}
+        }
+        static int[] arrayReverse(int[] newArray)
+        {
+            int assignItem;
+            for (int i = 0; i < newArray.Length; i++)
+			{
+                for (int j = i+1; j < newArray.Length; j++)
+			    {
+                    if(newArray[i]>newArray[j])
+                    {
+                        assignItem=newArray[i];
+                        newArray[i]=newArray[j];
+                        newArray[j]=assignItem;
+                    }
+			    }
+			}
+            return newArray;
         }
         static int maxArray(int[] newArray)
         {
@@ -63,11 +80,12 @@ namespace ConsoleApplication
 
             Console.Write("Введите количество элементов: ");
             int newAmount=int.Parse(Console.ReadLine());
-
             int[] myArray=createNewArray(newAmount);
-
-            outputAnArray(myArray);
+            printArray(myArray);
             
+            arrayReverse(myArray);
+            printArray(myArray);
+
             Console.WriteLine("\nМаксимум массива = "+maxArray(myArray));
 
             Console.WriteLine("\nМинимум массива = "+minArray(myArray));
