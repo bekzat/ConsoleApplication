@@ -26,7 +26,7 @@ namespace ConsoleApplication
 			}
             Console.WriteLine();
         }
-        static int[] arrayReverse(int[] newArray)
+        static int[] arrayGrowth (int[] newArray)
         {
             int assignItem;
             for (int i = 0; i < newArray.Length; i++)
@@ -76,15 +76,19 @@ namespace ConsoleApplication
 			}
             return sum;
         }
+
         static void Main(string[] args)
         {
 
             Console.Write("Введите количество элементов массива: ");
             int newAmount=int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Вывод массива");
             int[] myArray=createNewArray(newAmount);
             printArray(myArray);
             
-            arrayReverse(myArray);
+            Console.WriteLine("Вывод массива по возрастанию");
+            arrayGrowth (myArray);
             printArray(myArray);
 
             Console.WriteLine("\nМаксимум массива = "+maxArray(myArray));
